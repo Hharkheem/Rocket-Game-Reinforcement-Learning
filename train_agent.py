@@ -47,32 +47,6 @@ if __name__ == '__main__':
     # 'MlpPolicy' is a standard feedforward neural network policy
     # verbose=1 logs training progress
     model = PPO("MlpPolicy", vec_env, verbose=1, tensorboard_log=LOG_DIR)
-    # model = PPO(
-    # "MlpPolicy",
-    # vec_env,
-    # verbose=1,
-    # tensorboard_log=LOG_DIR,
-    # # Hyperparameter adjustments
-    # learning_rate=3e-4,                # Consider using a schedule: linear_schedule(3e-4)
-    # n_steps=2048,                       # Number of steps per update
-    # batch_size=64,                      # Minibatch size
-    # n_epochs=10,                       # Number of optimization epochs per update
-    # gamma=0.99,                        # Discount factor
-    # gae_lambda=0.95,                   # GAE parameter
-    # clip_range=0.2,                    # Initial clip range (can be schedule)
-    # clip_range_vf=None,                # Separate clip range for value function
-    # ent_coef=0.01,                     # Entropy regularization coefficient
-    # vf_coef=0.5,                       # Value function loss coefficient
-    # max_grad_norm=0.5,                 # Gradient clipping
-    # use_sde=True,                      # Use generalized State Dependent Exploration
-    # sde_sample_freq=64,                # SDE sample frequency
-    # policy_kwargs={
-    #     "net_arch": [dict(pi=[256, 256], vf=[256, 256])],  # Larger network
-    #     "activation_fn": torch.nn.Tanh,
-    #     "ortho_init": True,
-    #     "log_std_init": -0.5
-    # }
-    # )
 
     # --- Training ---
     print(f"Training started for {TOTAL_TIMESTEPS} timesteps...")
